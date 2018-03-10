@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt   = require('bcrypt-nodejs');
-const Request = require('Request');
+const Request = require('./Request');
 
 // define the schema for our user model
 const userSchema = mongoose.Schema({
@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
       longitude : String
     },
     profilePicUrl : String,
-    requests : Request
+    requests : [Request]
 });
 
 // methods ======================
