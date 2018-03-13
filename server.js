@@ -24,6 +24,8 @@ io.on('connection', (socket) => {
   require('./sockets/request')(io, socket);
 })
 
+// Have my Commits not been showing as contributions?
+
 app.get('/', (req, res) => {
   const mapApiKey = 'AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI';
   res.render('index', {mapApiKey : mapApiKey})
