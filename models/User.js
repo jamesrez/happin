@@ -6,12 +6,8 @@ const Request = require('./Request');
 const userSchema = mongoose.Schema({
     username : String,
     password : String,
-    location : {
-      latitude : String,
-      longitude : String
-    },
     profilePicUrl : String,
-    requests : [Request]
+    balance : String
 });
 
 // methods ======================

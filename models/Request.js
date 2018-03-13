@@ -5,11 +5,23 @@ const bcrypt   = require('bcrypt-nodejs');
 const requestSchema = mongoose.Schema({
     title : String,
     body : String,
-    owner : String
+    owner : String,
+    location : {
+      lat : String,
+      lon : String
+    },
+    helpers : [{
+      username : String,
+      location : {
+        lat : String,
+        lon : String
+      }
+    }],
+    pay : String
 });
 
 // methods ======================
 
 
 // create the model for users and expose it to our app
-module.exports = {requestSchema : requestSchema};
+module.exports = mongoose.model('Request', requestSchema);

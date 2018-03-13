@@ -1,0 +1,10 @@
+body {
+  display : flex;
+  justify-content: flex-start;
+}
+
+#map {
+  width : 70%;
+  height : 90%;
+  align-self: flex-end;
+}
