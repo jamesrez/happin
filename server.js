@@ -26,6 +26,7 @@ io.on('connection', (socket) => {
 
 // Have my Commits not been showing as contributions?
 // I really hope so. It's been like 5 months basically
+// Lets see if that fixes
 
 app.get('/', (req, res) => {
   const mapApiKey = 'AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI';
