@@ -1,6 +1,5 @@
 
 showMap = (pos) => {
-  console.log(pos);
   let map = new google.maps.Map(document.getElementById('map'), {
     center : pos,
     zoom: 15

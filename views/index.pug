@@ -1,8 +1,12 @@
 head
-  link(type='text/css' rel='stylesheet' href='/public/css/index.css')
+  if !mobile
+    link(type='text/css' rel='stylesheet' href='/public/css/index-desktop.css')
+  else
+    link(type='text/css' rel='stylesheet' href='/public/css/index-mobile.css')
   script(src='/public/scripts/jquery-3.3.1.min.js')
   script(src='/public/scripts/map.js')
   script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=' + mapApiKey + '&callback=initMap')
+  script(src="/public/scripts/index.js")
 
 .info
   .nav

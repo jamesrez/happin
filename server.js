@@ -4,6 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
+const MobileDetect = require('mobile-detect');
 
 const port = process.env.PORT || '3000';
 
@@ -27,7 +28,9 @@ io.on('connection', (socket) => {
 
 app.get('/', (req, res) => {
   const mapApiKey = 'AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI';
-  res.render('index', {mapApiKey : mapApiKey})
+  let md = new MobileDetect(req.headers['user-agent']);
+  console.log(md.mobile());
+  res.render('index', {mapApiKey : mapApiKey, mobile : md.mobile()})
 })
 
 server.listen(port, () =>{
