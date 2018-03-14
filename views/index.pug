@@ -1,11 +1,15 @@
 head
   link(type='text/css' rel='stylesheet' href='/public/css/index.css')
+  script(src='/public/scripts/jquery-3.3.1.min.js')
   script(src='/public/scripts/map.js')
   script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=' + mapApiKey + '&callback=initMap')
 
 .info
   .nav
     h1.brand Happin
-  #map
+    .newRequestBtn Add Your Request
+  .mapContainer
+    img#mapLoading(src="/public/assets/Procfile.svg")
+    #map
 
 .content

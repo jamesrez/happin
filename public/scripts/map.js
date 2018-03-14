@@ -20,9 +20,10 @@ initMap = () => {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      $('#mapLoading').css('display', 'none');
+      $('#map').css('display' , 'block');
       showMap(pos);
     }, function(pos) {
-      showMap(pos);
     });
   } else {
     // Browser doesn't support Geolocation

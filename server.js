@@ -12,6 +12,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/happin-local');
 app.set('view engine' , 'pug');
 app.use('/public/css', express.static(__dirname + '/public/css'));
 app.use('/public/scripts', express.static(__dirname + '/public/scripts'));
+app.use('/public/assets', express.static(__dirname + '/public/assets'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
