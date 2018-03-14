@@ -2,6 +2,7 @@ head
   if !mobile
     link(type='text/css' rel='stylesheet' href='/public/css/index-desktop.css')
   else
+    meta(name="viewport" content="initial-scale=1.0, user-scalable=no")
     link(type='text/css' rel='stylesheet' href='/public/css/index-mobile.css')
   script(src='/public/scripts/jquery-3.3.1.min.js')
   script(src='/public/scripts/map.js')

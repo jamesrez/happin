@@ -7,7 +7,7 @@ showMap = (pos) => {
   let userLocation = new google.maps.Marker({
     position : pos,
     map : map
-  })
+  });
 }
 
 
