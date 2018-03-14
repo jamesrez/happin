@@ -36,6 +36,9 @@ body {
 }
 
 .newRequestBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color : white;
   font-size: 15px;
   font-weight: bold;
