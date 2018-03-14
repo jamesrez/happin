@@ -5,7 +5,10 @@ showMap = (pos) => {
     center : pos,
     zoom: 15
   });
-  let infoWindow = new google.maps.InfoWindow;
+  let userLocation = new google.maps.Marker({
+    position : pos,
+    map : map
+  })
 }
 
 
