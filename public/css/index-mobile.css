@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  height : 10%;
+  height : 15%;
 }
 
 .brandContainer{
@@ -68,7 +68,7 @@ body {
   display : flex;
   flex-direction: column;
   justify-content: center;
-  height : 90%;
+  height : 85%;
   background-color: #05b267;
 }
 
