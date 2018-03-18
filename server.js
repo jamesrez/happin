@@ -29,7 +29,7 @@ io.on('connection', (socket) => {
 app.get('/', (req, res) => {
   const mapApiKey = 'AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI';
   let md = new MobileDetect(req.headers['user-agent']);
-  console.log(md.mobile());
+  // console.log(md.mobile());
   res.render('index', {mapApiKey : mapApiKey, mobile : md.mobile()})
 })
 

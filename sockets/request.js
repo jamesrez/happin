@@ -5,6 +5,7 @@ module.exports = (io, socket) => {
     let newRequest = new Request({
       title : d.title,
       body : d.body,
+      payout : d.payout,
       owner : d.owner,
       location : {
         lat : d.lat,

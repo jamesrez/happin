@@ -10,6 +10,8 @@ const requestSchema = mongoose.Schema({
       lat : String,
       lon : String
     },
+    helperSpotsOpen : Number,
+    helperSpotsMax : Number,
     helpers : [{
       username : String,
       location : {
@@ -17,7 +19,7 @@ const requestSchema = mongoose.Schema({
         lon : String
       }
     }],
-    pay : String
+    payout : String
 });
 
 // methods ======================

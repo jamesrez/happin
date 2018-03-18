@@ -5,9 +5,9 @@ head
     meta(name="viewport" content="initial-scale=1.0, user-scalable=no")
     link(type='text/css' rel='stylesheet' href='/public/css/index-mobile.css')
   script(src='/public/scripts/jquery-3.3.1.min.js')
-  script(src='/public/scripts/map.js')
-  script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=' + mapApiKey + '&callback=initMap')
+  script(src='/public/scripts/socket.io.slim.js')
   script(src="/public/scripts/index.js")
+  script(async defer src='https://maps.googleapis.com/maps/api/js?key=' + mapApiKey + '&callback=initMap')
 
 .info
   .nav
@@ -18,6 +18,29 @@ head
   .mapContainer
     img#mapLoading(src="/public/assets/Procfile.svg")
     #map
+  .requestFormContainer
+    .requestForm
+      h1.newRequestLabel New Request
+      .requestFormInputs
+        h2#requestTitleLabel Title
+        input#newRequestTitle.requestInput(placeholder="Help me clean 4th Street")
+        h2#requestBodyLabel Body
+        textarea#newRequestBody.requestInput(placeholder="Description of Request")
+        h2#requestPayLabel Payout
+        input#newRequestPay.requestInput(placeholder="Leave blank for no Payout")
+      #newRequestSubmit Submit
 
 .content
-  .label Requests Near You
+  h1.nearRequestslabel Requests Near You
+    .requestsPlaceholder
+  .requestsContainer
+    .request
+      .requestBasicInfo
+        #requestTitle Help me learn biology please!
+        .requestBasicInfoSep
+          #requestOwner Bobby
+          #requestLoc 1547 Mission St
+      .viewRequestBtn
+        #requestPayout $10
+        #requestSpots ( 0/1 )
+    
