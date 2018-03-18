@@ -161,19 +161,33 @@ body {
   display: flex;
 }
 
+.request-prototype{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 15px;
+  border-top: 2px solid #05b267;
+  /*border-bottom: 2px solid #05b267;*/
+  background-color: #fdfff7;
+  height : 10%;
+}
+
 .request{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: sans-serif;
   font-size: 15px;
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  border-top: 2px solid #05b267;
+  /*border-bottom: 2px solid #05b267;*/
   background-color: #fdfff7;
+  height : 8%;
 }
 
 .requestBasicInfo{
   padding : 10px;
+  width : 80%;
 }
 
 .requestBasicInfoSep{
@@ -196,7 +210,7 @@ body {
 
 #requestTitle{
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .viewRequestBtn{

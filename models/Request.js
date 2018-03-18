@@ -16,7 +16,7 @@ const requestSchema = mongoose.Schema({
       username : String,
       location : {
         lat : String,
-        lon : String
+        lng : String
       }
     }],
     payout : String
