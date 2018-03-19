@@ -45,6 +45,7 @@ app.get('/', (req, res) => {
         lng : loc.longitude
       }
     }
+    console.log(userLocation);
     res.render('index', {
       mapApiKey : mapApiKey,
       mobile : md.mobile(),
