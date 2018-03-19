@@ -32,8 +32,7 @@ app.get('/', (req, res) => {
   let md = new MobileDetect(req.headers['user-agent']);
   res.render('index', {
     mapApiKey : mapApiKey,
-    mobile : md.mobile(),
-    userLocation : userLocation
+    mobile : md.mobile()
   });
 });
 

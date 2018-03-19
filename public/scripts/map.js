@@ -23,8 +23,7 @@ initMap = () => {
   //   console.log("No geo");
   // }
 
-  $.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI',
-  (data) => {
+  $.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBDPiZQRAopncSA6oAdW6bZQ5AufZNPVz0', (data) => {
     $('#mapLoading').css('display', 'none');
     $('#map').css('display' , 'block');
     let map = new google.maps.Map(document.getElementById('map'), {
