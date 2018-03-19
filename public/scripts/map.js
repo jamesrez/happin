@@ -23,16 +23,18 @@ initMap = () => {
   //   console.log("No geo");
   // }
 
-  $('#mapLoading').css('display', 'none');
-  $('#map').css('display' , 'block');
-  let map = new google.maps.Map(document.getElementById('map'), {
-    center : userLoc,
-    zoom: 15
-  });
-  let userLocation = new google.maps.Marker({
-    position : userLoc,
-    map : map
-  });
-
+  $.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI',
+  (data) => {
+    $('#mapLoading').css('display', 'none');
+    $('#map').css('display' , 'block');
+    let map = new google.maps.Map(document.getElementById('map'), {
+      center : data.location,
+      zoom: 15
+    });
+    let userLocation = new google.maps.Marker({
+      position : data.location,
+      map : map
+    });
+  })
 
 }
