@@ -1,42 +1,48 @@
 //============== GET USER LOCATION & Update Map ===================
-let pos;
-initMap = () => {
+// let pos;
+// initMap = () => {
+//
+//   showMap = (pos) => {
+//     let map = new google.maps.Map(document.getElementById('map'), {
+//       center : {
+//         lat: 37.796152,
+//         lng: -122.404992
+//       },
+//       zoom: 15
+//     });
+//     let userLocation = new google.maps.Marker({
+//       position : {
+//         lat: 37.796152,
+//         lng: -122.404992
+//       },
+//       map : map
+//     });
+//   }
+  //
+  // if (navigator.geolocation) {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     pos = {
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude
+  //     };
+  //     $('#mapLoading').css('display', 'none');
+  //     $('#map').css('display' , 'block');
+  //     showMap(pos);
+  //   }, function(err) {
+  //     let examplePos = {
+  //       lat: 37.796152,
+  //       lng: -122.404992
+  //     }
+  //     $('#mapLoading').css('display', 'none');
+  //     $('#map').css('display' , 'block');
+  //     showMap(examplePos);
+  //   });
+  // } else {
+  //   // Browser doesn't support Geolocation
+  //   console.log("No geo");
+  // }
+//}
 
-  showMap = (pos) => {
-    let map = new google.maps.Map(document.getElementById('map'), {
-      center : pos,
-      zoom: 15
-    });
-    let userLocation = new google.maps.Marker({
-      position : pos,
-      map : map
-    });
-  }
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      $('#mapLoading').css('display', 'none');
-      $('#map').css('display' , 'block');
-      showMap(pos);
-    }, function(err) {
-      let examplePos = {
-        lat: 37.796152,
-        lng: -122.404992
-      }
-      $('#mapLoading').css('display', 'none');
-      $('#map').css('display' , 'block');
-      showMap(examplePos);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    console.log("No geo");
-  }
-
-}
 
 $(document).ready(() => {
 
