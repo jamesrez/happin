@@ -32,14 +32,17 @@ app.get('/', (req, res) => {
   const mapApiKey = 'AIzaSyCucitjj7AcVk8Hv35Pd6JVPQiNhzB8LwI';
   let md = new MobileDetect(req.headers['user-agent']);
   let userLocation = false;
-  if(req.ip == '::1'){
+  let userIp = req.ip;
+  if (userIp.substr(0, 7) == "::ffff:") {
+    userIp = userIp.substr(7)
+  }
+  if(userIp == '::1'){
     userLocation = {
       lat: 37.796152,
       lng: -122.404992
     }
   }
-  console.log(req.ip);
-  iplocation(req.ip, (error, loc) => {
+  iplocation(userIp, (error, loc) => {
     if(!userLocation){
       userLocation = {
         lat : loc.latitude,
