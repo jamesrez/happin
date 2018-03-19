@@ -38,6 +38,7 @@ app.get('/', (req, res) => {
       lng: -122.404992
     }
   }
+  console.log(req.ip);
   iplocation(req.ip, (error, loc) => {
     if(!userLocation){
       userLocation = {
