@@ -2,10 +2,10 @@ initMap = () => {
 
 
   getLocation = (cb) => {
-    $.getJSON("http://ip-api.com/json", function(data) {
+    $.getJSON("https://freegeoip.net/json/", function(data) {
       let pos = {
-        lat : data.lat,
-        lng : data.lon
+        lat : data.latitude,
+        lng : data.longitude
       }
       cb(pos);
     });
