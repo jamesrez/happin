@@ -1,5 +1,16 @@
 initMap = () => {
 
+
+  getLocation = (cb) => {
+    $.getJSON("http://ip-api.com/json", function(data) {
+      let pos = {
+        lat : data.lat,
+        lng : data.lon
+      }
+      cb(pos);
+    });
+  }
+
   // if (navigator.geolocation) {
   //   navigator.geolocation.getCurrentPosition(function(position){
   //     pos = {
@@ -23,17 +34,20 @@ initMap = () => {
   //   console.log("No geo");
   // }
 
-  $.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBDPiZQRAopncSA6oAdW6bZQ5AufZNPVz0', (data) => {
-    $('#mapLoading').css('display', 'none');
-    $('#map').css('display' , 'block');
-    let map = new google.maps.Map(document.getElementById('map'), {
-      center : data.location,
-      zoom: 15
+  // $.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBDPiZQRAopncSA6oAdW6bZQ5AufZNPVz0', (data) => {
+    getLocation((pos) => {
+      $('#mapLoading').css('display', 'none');
+      $('#map').css('display' , 'block');
+      console.log(pos);
+      let map = new google.maps.Map(document.getElementById('map'), {
+        center : pos,
+        zoom: 15
+      });
+      let userLocation = new google.maps.Marker({
+        position : pos,
+        map : map
+      });
     });
-    let userLocation = new google.maps.Marker({
-      position : data.location,
-      map : map
-    });
-  })
+
 
 }

@@ -53,12 +53,21 @@ body {
   cursor: pointer;
 }
 
+.mapAndRequests{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  height : 100%;
+  background-color: #05b267;
+  position : relative;
+}
+
 .mapContainer {
   display : flex;
   flex-direction: column;
   justify-content: center;
   height : 100%;
-  background-color: #05b267;
+  z-index: 0;
 }
 
 #mapLoading{
@@ -74,23 +83,26 @@ body {
 /*======================Request Form Styles======================*/
 
 .requestFormContainer{
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
   display : none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height : 100%;
-  background-color: #05b267;
+  z-index: 5;
   /*border : 2px solid white;*/
 }
 
 .requestForm{
   font-family: sans-serif;
+  color : black;
   display: flex;
   flex-direction: column;
   align-items: center;
   /*border : 2px solid white;*/
-  border-radius : 10px;
-  background-color: #f1f9cc;
+  border-radius : 20px;
+  background-color: rgba(5, 178, 103, 0.9);
   width : 75%;
   height : 90%;
 }
@@ -107,17 +119,19 @@ body {
 
 .newRequestLabel{
   /*border : 2px solid white;*/
+  color : white;
   text-align: center;
   height : 5%;
   padding-bottom: 18px;
   width : 70%;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid black;
 }
 
 .requestInput{
   width : 70%;
   font-size: 14px;
   text-align: center;
+  border : 2px solid black;
 }
 
 #newRequestBody{
@@ -125,12 +139,12 @@ body {
 }
 
 #newRequestSubmit{
-  border : 2px solid white;
-  color : white;
+  border : 2px solid black;
+  color : #05b267;
   font-weight: bold;
   text-align: center;
   width : 20%;
-  background-color : #05b267;
+  background-color : #f1f9cc;
   border-radius: 10px;
   font-size : 22px;
   margin-top : 30px;
@@ -182,10 +196,13 @@ body {
   border-top: 2px solid #05b267;
   /*border-bottom: 2px solid #05b267;*/
   background-color: #fdfff7;
-  height : 8%;
+  height : 10%;
 }
 
 .requestBasicInfo{
+  display : flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding : 10px;
   width : 80%;
 }

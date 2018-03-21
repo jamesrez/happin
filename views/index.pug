@@ -9,31 +9,32 @@ head
   script(src="/public/scripts/index.js")
   script(src="/public/scripts/map.js")
   script(async defer src='https://maps.googleapis.com/maps/api/js?key=' + mapApiKey + '&callback=initMap')
-
+  
   
 .info
   .nav
     .brandContainer
       h1.brand Happin
     .requestButtons
-      .newRequestBtn Add Your Request
-  .mapContainer
-    img#mapLoading(src="/public/assets/Procfile.svg")
-    #map
-  .requestFormContainer
-    .requestForm
-      h1.newRequestLabel New Request
-      .requestFormInputs
-        h2#requestTitleLabel Title
-        input#newRequestTitle.requestInput(placeholder="Help me clean 4th Street")
-        h2#requestBodyLabel Body
-        textarea#newRequestBody.requestInput(placeholder="Description of Request")
-        h2#requestPayLabel Payout
-        input#newRequestPay.requestInput(placeholder="Leave blank for no Payout")
-      #newRequestSubmit Submit
-
+      .newRequestBtn Make it Happin
+  .mapAndRequests
+    .mapContainer
+      img#mapLoading(src="/public/assets/Procfile.svg")
+      #map
+    .requestFormContainer
+      .requestForm
+        h1.newRequestLabel New Happin
+        .requestFormInputs
+          h2#requestTitleLabel Title
+          input#newRequestTitle.requestInput(placeholder="Help me clean 4th Street")
+          h2#requestBodyLabel Description
+          textarea#newRequestBody.requestInput(placeholder="Description of Request")
+          h2#requestPayLabel Payout
+          input#newRequestPay.requestInput(placeholder="Leave blank for no Payout")
+        #newRequestSubmit Submit    
+    
 .content
-  h1.nearRequestslabel Requests Near You
+  h1.nearRequestslabel What's Happining
     .requestsPlaceholder
   .requestsContainer
     .request-prototype
